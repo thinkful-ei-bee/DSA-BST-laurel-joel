@@ -45,10 +45,10 @@ class BinarySearchTree {
   }
 
   find(key) {
-
+    
     // jackpot!
     if (this.key == key) {
-      return this.value
+      return this
     }
 
     // if key less than, continue searching on left

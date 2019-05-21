@@ -15,11 +15,59 @@ https://imgur.com/a/bCPFeDd
 const binarySearchTree = require('./BinarySearchTree.js');
 
 function main() {
-  //bst = new binarySearchTree;
 
-  var arr = [ 0, 1, 2, 3, 4, 5, 6];
-  var middle = arr[Math.floor(arr.length / 2)];
-  console.log(middle)
+  // Creat a BST class
+  bstNumbers = new binarySearchTree;
+  bstAlpha = new binarySearchTree;
+
+  let dataNumeric = [3, 1, 4, 6, 9, 2, 5, 7];
+  let dataAlpha = ['E', 'A', 'S', 'Y', 'Q', 'U', 'E', 'S', 'T', 'I', 'O', 'N'];
+  
+  for (let i = 0; i < dataNumeric.length; i++) {
+    bstNumbers.insert(dataNumeric[i], dataNumeric[i]);
+  }
+
+  for (let i = 0; i < dataAlpha.length; i++) {
+    bstAlpha.insert(dataAlpha[i], dataAlpha[i]);
+  }
+
+  //console.log(bstAlpha.find('E'));
+
+  /*
+    Q: What does this do?
+    A: Adds everything together
+    function tree(t){
+      if(!t){
+          return 0;
+      }
+      return tree(t.left) + t.value + tree(t.right)
+    }
+  */
+
+  function tree(t){
+    if(!t){
+        return 0;
+    }
+    return t.value + tree(t.left) + tree(t.right);
+  }
+  // console.log(tree(bstNumbers));
+
+  /*
+  Write an algorythm to find the height of a BST. What is the time complexity
+  of your algorythm?
+  - if tree empty return 0
+  - get max depth left recursively
+  - get max depth right recursively
+  */
+  function height(t, height = 0){
+    if(!t){
+        return height;
+    }
+    console.log(t.left)
+    console.log(t.right)
+  }
+
+  console.log(height(bstNumbers));
 }
 
 main()
