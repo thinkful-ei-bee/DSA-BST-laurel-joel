@@ -59,15 +59,19 @@ function main() {
   - get max depth left recursively
   - get max depth right recursively
   */
-  function height(t, height = 0){
+  function height(t, h = 0){
     if(!t){
-        return height;
+        return h;
     }
-    console.log(t.left)
-    console.log(t.right)
+    h++;
+    let left = height(t.left, h);
+    let right = height(t.right, h);
+
+    console.log(h);
+    
   }
 
-  console.log(height(bstNumbers));
+  height(bstNumbers);
 }
 
 main()
