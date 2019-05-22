@@ -108,6 +108,7 @@ function main() {
       return t;
     }
     let right = height(t.right);
+    let left = height(t.left);
     return thirdLargestNode(right);
   }
   console.log(thirdLargestNode(bstNumbers));
